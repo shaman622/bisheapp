@@ -1,0 +1,325 @@
+/* 页面容器 */
+.imputation-page {
+  padding: 20px;
+  max-width: 900px; /* 增加页面容器的最大宽度 */
+  margin: 0 auto;
+}
+
+/* 标题 */
+.imputation-page h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 卡片样式 */
+.section-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* 卡片宽度占满容器 */
+}
+
+.section-card h2 {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.section-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.section-card ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.section-card ul li {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+/* 表单样式 */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box; /* 确保宽度包含 padding 和 border */
+}
+
+.form-group input[type="number"] {
+  width: 100%;
+}
+
+.form-group span {
+  margin-left: 10px;
+  color: #555;
+}
+
+/* 按钮样式 */
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* 提交参数结果显示 */
+.submitted-params {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.submitted-params h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.submitted-params p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* 选项提交部分 */
+.options-submission {
+  margin-bottom: 40px;
+}
+
+.options-submission h3 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.options-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.options-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+}
+
+.options-description {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.options-description p {
+  margin-bottom: 10px;
+}
+
+/* 参数提交部分 */
+.parameter-submission {
+  margin-bottom: 40px;
+}
+
+.parameter-submission h3 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* 处理数据部分 */
+.data-processing {
+  margin-bottom: 20px;
+}
+
+.data-processing h3 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* 处理结果显示 */
+.result-textbox {
+  margin-top: 20px;
+}
+
+.result-textbox h4 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.result-textbox textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: none;
+  background-color: #f9f9f9;
+}
+
+/* 增加处理结果文本框与卡片之间的距离 */
+.result-textbox {
+  margin-right: 20px; /* 增加右边距 */
+}
+
+
+/* 选项说明 */
+.option-description {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 参数说明 */
+.parameter-description {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 数据统计按钮 */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* 数据统计表格 */
+.statistics-table {
+  margin-top: 20px;
+}
+
+.statistics-table h3 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.statistics-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.statistics-table th,
+.statistics-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.statistics-table th {
+  background-color: #f9f9f9;
+  color: #555;
+  font-weight: bold;
+}
+
+/* 第一行表头样式 */
+.statistics-table thead tr:first-child th {
+  border-bottom: none; /* 去掉第一行的下边框 */
+  font-size: 1.1em;
+  background-color: #e9e9e9; /* 浅灰色背景 */
+}
+
+/* 第二行表头样式 */
+.statistics-table thead tr:nth-child(2) th {
+  border-top: none; /* 去掉第二行的上边框 */
+}
+
+/* 表格行样式 */
+.statistics-table tbody tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+.statistics-table tbody tr:hover {
+  background-color: #e9e9e9;
+}
+/* 文件上传行 */
+.file-upload-row {
+  margin-top: 20px;
+}
+
+.file-upload-row h3 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.file-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-label {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+  background-color: #0056b3;
+}
+
+.file-name {
+  color: #555;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.upload-button {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #218838;
+}

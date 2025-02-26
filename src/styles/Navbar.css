@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: flex-start; /* 确保内容左对齐 */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0; /* 去掉默认的 margin */
+  padding: 0; /* 去掉默认的 padding */
+}
+
+.navbar-title {
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+  margin-right: 40px; /* 标题和选项之间的间距 */
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0; /* 去掉默认的 margin */
+  padding: 0; /* 去掉默认的 padding */
+  display: flex;
+}
+
+.navbar-links li {
+  margin-right: 20px; /* 选项之间的间距 */
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
