@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/Imputation.css';
 
 const ParameterSettings: React.FC = () => {
-    const [ratio, setRatio] = useState<string>('80,10,10'); // 比例参数
+  const [ratio, setRatio] = useState<string>('80,10,10'); // 比例参数
   const [seed, setSeed] = useState<number>(42); // seed 参数
   const [maxImputationLength, setMaxImputationLength] = useState<number>(10); // 最大插补长度
   const [weightThreshold, setWeightThreshold] = useState<number>(0.5); // 有权边转为无权边阈值
@@ -62,19 +62,6 @@ const ParameterSettings: React.FC = () => {
             <div className="options-submission">
             <h3>选项提交</h3>
             <div className="options-checkbox">
-                <label>
-                <input
-                    type="checkbox"
-                    checked={options.adaptiveImputation}
-                    onChange={(e) =>
-                    setOptions({ ...options, adaptiveImputation: e.target.checked })
-                    }
-                />
-                是否采用自适应缺失值插补
-                </label>
-                <p className="option-description">
-                本系统提供自适应插补功能：如果您无法判断数据缺失是由随机数据点缺失导致，还是由周期性采样或不同于其他时间序列的采样频率所导致，建议选择此项——系统会自动判别缺失模式，并对被判定为随机缺失的数据点进行插补。
-                </p>
                 <label>
                 <input
                     type="checkbox"

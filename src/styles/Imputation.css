@@ -241,3 +241,53 @@ button:hover {
   gap: 10px;
   margin-top: 20px;
 }
+
+/* 数据统计表格 */
+.statistics-table {
+  margin-top: 20px;
+}
+
+.statistics-table h3 {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.statistics-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.statistics-table th,
+.statistics-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.statistics-table th {
+  background-color: #f9f9f9;
+  color: #555;
+  font-weight: bold;
+}
+
+/* 第一行表头样式 */
+.statistics-table thead tr:first-child th {
+  border-bottom: none; /* 去掉第一行的下边框 */
+  font-size: 1.1em;
+  background-color: #e9e9e9; /* 浅灰色背景 */
+}
+
+/* 第二行表头样式 */
+.statistics-table thead tr:nth-child(2) th {
+  border-top: none; /* 去掉第二行的上边框 */
+}
+
+/* 表格行样式 */
+.statistics-table tbody tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+.statistics-table tbody tr:hover {
+  background-color: #e9e9e9;
+}
