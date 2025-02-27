@@ -13,10 +13,8 @@ const ParameterSettings: React.FC = () => {
     weightThreshold: number;
   } | null>(null);
   const [options, setOptions] = useState<{
-    adaptiveImputation: boolean;
     normalizeAdjMatrix: boolean;
   }>({
-    adaptiveImputation: false,
     normalizeAdjMatrix: false,
   });
   const [processingResult, setProcessingResult] = useState<string>(''); // 处理结果
@@ -33,7 +31,6 @@ const ParameterSettings: React.FC = () => {
     // 处理选项提交
     const handleSubmitOptions = () => {
         alert(`提交的选项：
-        是否采用自适应缺失值插补: ${options.adaptiveImputation ? '是' : '否'}
         邻接矩阵数据是否需要归一化处理: ${options.normalizeAdjMatrix ? '是' : '否'}`);
     };
 
