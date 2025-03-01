@@ -18,7 +18,7 @@ const ModelTesting: React.FC = () => {
             <div className="section-card">
                 <h2>模型测试</h2>
                 <button className="submit-button" onClick={handleTest}>
-                    开始预测
+                    开始测试
                 </button>
 
                 {/* 测试结果显示 */}
