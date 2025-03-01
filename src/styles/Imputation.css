@@ -222,7 +222,6 @@ button:hover {
   font-family: monospace;
   resize: none;
   font-size: 1rem; /* 放大字体 */
-  height: 300px; /* 设置固定高度 */
 }
 
 /* 数据统计表格 */

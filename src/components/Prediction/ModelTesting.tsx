@@ -27,8 +27,7 @@ const ModelTesting: React.FC = () => {
                     <textarea
                         readOnly
                         value={testResult}
-                        rows={3} // 动态设置行数
-                        style={{ width: '100%', resize: 'none' }} // 禁止用户调整大小
+                        rows={5} // 动态设置行数
                     />
                 </div>
 
