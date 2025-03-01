@@ -4,12 +4,10 @@ import '../styles/Imputation.css';
 const ParameterSettings: React.FC = () => {
     const [ratio, setRatio] = useState<string>('80,10,10'); // 比例参数
     const [seed, setSeed] = useState<number>(42); // seed 参数
-    const [weightThreshold, setWeightThreshold] = useState<number>(0.5); // 有权边转为无权边阈值
     const [dropoutPercentage, setDropoutPercentage] = useState<number>(5); // 随机丢弃数据百分比
     const [submittedParams, setSubmittedParams] = useState<{
         ratio: string;
         seed: number;
-        weightThreshold: number;
         dropoutPercentage: number;
     } | null>(null);
     const [options, setOptions] = useState<{
@@ -39,7 +37,6 @@ const ParameterSettings: React.FC = () => {
         setSubmittedParams({
             ratio,
             seed,
-            weightThreshold,
             dropoutPercentage,
         });
     };
@@ -123,22 +120,6 @@ const ParameterSettings: React.FC = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="weightThreshold">有权边转为无权边阈值：</label>
-                        <p className="parameter-description">
-                            小于阈值的边会被自动剔除，大于阈值的边权值赋值为1。
-                        </p>
-                        <input
-                            type="number"
-                            id="weightThreshold"
-                            name="weightThreshold"
-                            step="0.1"
-                            min="0"
-                            max="1"
-                            value={weightThreshold}
-                            onChange={(e) => setWeightThreshold(parseFloat(e.target.value))}
-                        />
-                    </div>
-                    <div className="form-group">
                         <label htmlFor="ratio">Ratio：</label>
                         <p className="parameter-description">
                             训练集，验证集，测试集的划分比例参数 (如80,10,10)
@@ -175,7 +156,6 @@ const ParameterSettings: React.FC = () => {
                     <div className="submitted-params">
                         <h4>提交的参数：</h4>
                         <p>随机丢弃数据百分比: {submittedParams.dropoutPercentage}%</p>
-                        <p>有权边转为无权边阈值: {submittedParams.weightThreshold}</p>
                         <p>Ratio: {submittedParams.ratio}</p>
                         <p>Seed: {submittedParams.seed}</p>
                     </div>
