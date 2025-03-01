@@ -18,12 +18,12 @@ const ModelTesting: React.FC = () => {
             <div className="section-card">
                 <h2>模型测试</h2>
                 <button className="submit-button" onClick={handleTest}>
-                    开始测试
+                    开始预测
                 </button>
 
                 {/* 测试结果显示 */}
                 <div className="result-textbox">
-                    <h4>测试结果：</h4>
+                    <h4>预测结果：</h4>
                     <textarea
                         readOnly
                         value={testResult}

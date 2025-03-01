@@ -4,11 +4,9 @@ import '../../styles/Imputation.css';
 const ParameterSettings: React.FC = () => {
     const [ratio, setRatio] = useState<string>('80,10,10'); // 比例参数
     const [seed, setSeed] = useState<number>(42); // seed 参数
-    const [dropoutPercentage, setDropoutPercentage] = useState<number>(5); // 随机丢弃数据百分比
     const [submittedParams, setSubmittedParams] = useState<{
         ratio: string;
         seed: number;
-        dropoutPercentage: number;
     } | null>(null);
     const [processingResult, setProcessingResult] = useState<string>(''); // 处理结果
 
@@ -25,8 +23,7 @@ const ParameterSettings: React.FC = () => {
     const handleSubmitParams = () => {
         setSubmittedParams({
             ratio,
-            seed,
-            dropoutPercentage,
+            seed
         });
     };
 
@@ -51,21 +48,6 @@ const ParameterSettings: React.FC = () => {
             <div className="parameter-submission">
                 <h3>参数提交</h3>
                 <form>
-                    <div className="form-group">
-                        <label htmlFor="dropoutPercentage">随机丢弃数据百分比（默认5%）：</label>
-                        <p className="parameter-description">
-                            此参数仅作为训练参数使用，与最终插补无关，不会丢失已有的真实值。
-                        </p>
-                        <input
-                            type="number"
-                            id="dropoutPercentage"
-                            name="dropoutPercentage"
-                            min="0"
-                            max="100"
-                            value={dropoutPercentage}
-                            onChange={(e) => setDropoutPercentage(parseInt(e.target.value))}
-                        />
-                    </div>
                     <div className="form-group">
                         <label htmlFor="ratio">Ratio：</label>
                         <p className="parameter-description">
@@ -102,7 +84,6 @@ const ParameterSettings: React.FC = () => {
                 {submittedParams && (
                     <div className="submitted-params">
                         <h4>提交的参数：</h4>
-                        <p>随机丢弃数据百分比: {submittedParams.dropoutPercentage}%</p>
                         <p>Ratio: {submittedParams.ratio}</p>
                         <p>Seed: {submittedParams.seed}</p>
                     </div>

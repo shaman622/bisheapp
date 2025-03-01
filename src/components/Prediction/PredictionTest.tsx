@@ -5,19 +5,6 @@ const Imputation: React.FC = () => {
     // 文件上传部分状态
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [fileName, setFileName] = useState<string>('未选择文件');
-    const [maxImputationLength, setMaxImputationLength] = useState<number>(10); // 最大插补长度
-
-    // 选项部分状态
-    const [options, setOptions] = useState<{
-        uploadAdjMatrix: boolean;
-        adaptiveImputation: boolean;
-    }>({
-        uploadAdjMatrix: false,
-        adaptiveImputation: false,
-    });
-
-    // 结果部分状态
-    const [downloadUrl, setDownloadUrl] = useState<string>('');
 
     // 处理文件选择
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,38 +31,6 @@ const Imputation: React.FC = () => {
             alert('请先上传文件！');
             return;
         }
-        // 模拟插补过程
-        setTimeout(() => {
-            // 生成一个模拟的下载链接
-            const fakeData = new Blob(['模拟插补结果数据'], { type: 'application/octet-stream' });
-            setDownloadUrl(URL.createObjectURL(fakeData));
-        }, 2000);
-    };
-
-    // 处理下载文件
-    const handleDownload = () => {
-        if (!downloadUrl) {
-            alert('没有可下载的文件！');
-            return;
-        }
-
-        // 生成默认文件名：系统时间.pkl
-        const now = new Date();
-        const formattedDate = `${now.getFullYear()}${(now.getMonth() + 1)
-            .toString()
-            .padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}_${now
-            .getHours()
-            .toString()
-            .padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now
-            .getSeconds()
-            .toString()
-            .padStart(2, '0')}.pkl`;
-
-        const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.download = formattedDate; // 设置默认文件名
-        link.click();
-        URL.revokeObjectURL(downloadUrl); // 释放内存
     };
 
     return (
@@ -96,50 +51,16 @@ const Imputation: React.FC = () => {
                         style={{ display: 'none' }}
                     />
                     <span className="file-name">{fileName}</span>
-                    <button onClick={handleUpload} className="upload-button-custom" disabled={!options.uploadAdjMatrix}>
+                    <button onClick={handleUpload} className="upload-button-custom">
                         上传
                     </button>
                 </div>
-            </div>
-
-            {/* 第二部分：选项 */}
-            <div className="options-checkbox">
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={options.adaptiveImputation}
-                        onChange={(e) =>
-                            setOptions({ ...options, adaptiveImputation: e.target.checked })
-                        }
-                    />
-                    是否采用自适应缺失值插补
-                </label>
-                <p className="option-description">
-                    本系统提供自适应插补功能：如果您无法判断数据缺失是由随机数据点缺失导致，还是由周期性采样或不同于其他时间序列的采样频率所导致，建议选择此项——系统会自动判别缺失模式，并对被判定为随机缺失的数据点进行插补。
-                </p>
-                <label>
-                    <span>最大插补长度：</span>
-                    <input
-                        type="number"
-                        id="maxImputationLength"
-                        name="maxImputationLength"
-                        value={maxImputationLength}
-                        onChange={(e) => setMaxImputationLength(parseInt(e.target.value))}
-                        style={{ marginLeft: '10px', width: '60px' }}
-                    />
-                </label>
-                <p className="option-description">
-                    由用户决定是否对长序列连续缺失值进行插补。
-                </p>
             </div>
 
             {/* 第三部分：操作按钮 */}
             <div className="button-group" style={{ marginTop: '20px' }}>
                 <button className="submit-button" onClick={handleImputation}>
                     开始预测
-                </button>
-                <button className="submit-button" onClick={handleDownload} style={{ marginLeft: '10px' }}>
-                    下载文件
                 </button>
             </div>
         </div>
