@@ -5,6 +5,7 @@ const Imputation: React.FC = () => {
     // 文件上传部分状态
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [fileName, setFileName] = useState<string>('未选择文件');
+    const [maxImputationLength, setMaxImputationLength] = useState<number>(10); // 最大插补长度
 
     // 选项部分状态
     const [options, setOptions] = useState<{
@@ -142,6 +143,20 @@ const Imputation: React.FC = () => {
                 </label>
                 <p className="option-description">
                     本系统提供自适应插补功能：如果您无法判断数据缺失是由随机数据点缺失导致，还是由周期性采样或不同于其他时间序列的采样频率所导致，建议选择此项——系统会自动判别缺失模式，并对被判定为随机缺失的数据点进行插补。
+                </p>
+                <label>
+                    <span>最大插补长度：</span>
+                    <input
+                        type="number"
+                        id="maxImputationLength"
+                        name="maxImputationLength"
+                        value={maxImputationLength}
+                        onChange={(e) => setMaxImputationLength(parseInt(e.target.value))}
+                        style={{ marginLeft: '10px', width: '60px' }}
+                    />
+                </label>
+                <p className="option-description">
+                    由用户决定是否对长序列连续缺失值进行插补。
                 </p>
             </div>
 

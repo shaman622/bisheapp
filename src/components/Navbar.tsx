@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
        <div className="navbar-content">
         <div className="navbar-title">
-          不规则采样多元时间序列自适应插补-预测系统
+          不规则采样多元时间序列自适应插补及预测系统
       </div>
       <ul className="navbar-links">
         <li>
