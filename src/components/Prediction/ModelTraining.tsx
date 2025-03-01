@@ -10,8 +10,6 @@ const ModelTraining: React.FC = () => {
 
     // 处理参数提交
     const handleSubmitParams = () => {
-
-
         // 提交参数
         alert(`提交的参数：
         epoch: ${param1}

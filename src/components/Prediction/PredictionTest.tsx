@@ -8,6 +8,11 @@ const Imputation: React.FC = () => {
     const [testResult, setTestResult] = useState<string>('');
 
     const handleTest = () => {
+        if (!selectedFile) {
+            alert('请先上传文件！');
+            return;
+        }
+
         setTestResult('测试中...');
         // 模拟测试过程
         setTimeout(() => {
@@ -33,14 +38,6 @@ const Imputation: React.FC = () => {
             alert(`文件 "${selectedFile.name}" 上传成功！`);
         } else {
             alert('请先选择一个文件！');
-        }
-    };
-
-    // 处理插补
-    const handleImputation = () => {
-        if (!selectedFile) {
-            alert('请先上传文件！');
-            return;
         }
     };
 
@@ -70,7 +67,7 @@ const Imputation: React.FC = () => {
 
             {/* 第三部分：操作按钮 */}
             <div className="button-group" style={{ marginTop: '20px' }}>
-                <button className="submit-button" onClick={handleImputation}>
+                <button className="submit-button" onClick={handleTest}>
                     开始预测
                 </button>
             </div>

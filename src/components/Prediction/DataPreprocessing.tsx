@@ -15,14 +15,6 @@ const DataPreprocessing: React.FC = () => {
     }
   };
 
-  // 处理数据集邻接矩阵文件选择
-  const handleAdjacencyFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setSelectedAdjacencyFile(file);
-    }
-  };
-
   // 处理数据集特征文件上传
   const handleFeatureUpload = () => {
     if (selectedFeatureFile) {
