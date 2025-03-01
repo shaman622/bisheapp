@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Imputation.css';
+import '../../styles/Imputation.css';
 
 const DataPreprocessing: React.FC = () => {
   const [selectedFeatureFile, setSelectedFeatureFile] = useState<File | null>(null);
@@ -91,4 +91,4 @@ const DataPreprocessing: React.FC = () => {
   );
 };
 
-export default DataPreprocessing;
+export default DataPreprocessing; 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Imputation.css';
+import '../../styles/Imputation.css';
 
 const ModelTesting: React.FC = () => {
     const [testResult, setTestResult] = useState<string>('');

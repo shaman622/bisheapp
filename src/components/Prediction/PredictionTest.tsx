@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Imputation.css';
+import '../../styles/Imputation.css';
 
 const Imputation: React.FC = () => {
     // 文件上传部分状态
@@ -80,7 +80,7 @@ const Imputation: React.FC = () => {
 
     return (
         <div className="section-card">
-            <h2>插补功能</h2>
+            <h2>时间序列预测功能</h2>
 
             {/* 第一部分：文件上传 */}
             <div className="file-upload-row">
@@ -96,7 +96,7 @@ const Imputation: React.FC = () => {
                         style={{ display: 'none' }}
                     />
                     <span className="file-name">{fileName}</span>
-                    <button onClick={handleUpload} className="upload-button" disabled={!options.uploadAdjMatrix}>
+                    <button onClick={handleUpload} className="upload-button-custom" disabled={!options.uploadAdjMatrix}>
                         上传
                     </button>
                 </div>
@@ -104,33 +104,6 @@ const Imputation: React.FC = () => {
 
             {/* 第二部分：选项 */}
             <div className="options-checkbox">
-                <label>
-                    <input
-                        type="checkbox"
-                        checked={options.uploadAdjMatrix}
-                        onChange={(e) =>
-                            setOptions({ ...options, uploadAdjMatrix: e.target.checked })
-                        }
-                    />
-                    上传邻接矩阵
-                </label>
-                {options.uploadAdjMatrix && (
-                    <div className="file-upload-container">
-                        <label htmlFor="adj-matrix-file-input" className="file-label">
-                            选择邻接矩阵文件
-                        </label>
-                        <input
-                            id="adj-matrix-file-input"
-                            type="file"
-                            onChange={handleFileChange}
-                            style={{ display: 'none' }}
-                        />
-                        <span className="file-name">{fileName}</span>
-                        <button onClick={handleUpload} className="upload-button">
-                            上传
-                        </button>
-                    </div>
-                )}
                 <label>
                     <input
                         type="checkbox"
@@ -163,7 +136,7 @@ const Imputation: React.FC = () => {
             {/* 第三部分：操作按钮 */}
             <div className="button-group" style={{ marginTop: '20px' }}>
                 <button className="submit-button" onClick={handleImputation}>
-                    开始插补
+                    开始预测
                 </button>
                 <button className="submit-button" onClick={handleDownload} style={{ marginLeft: '10px' }}>
                     下载文件

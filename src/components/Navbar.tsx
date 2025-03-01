@@ -14,10 +14,10 @@ const Navbar: React.FC = () => {
           <Link to="/">首页</Link>
         </li>
         <li>
-          <Link to="/imputation">缺失值自适应时序插补</Link>
+          <Link to="/imputation">不规则采样多元时间序列插补</Link>
         </li>
         <li>
-          <Link to="/prediction">不规则时间序列预测</Link>
+          <Link to="/prediction">不规则采样多元时间序列预测</Link>
         </li>
       </ul>
       </div>

@@ -303,16 +303,6 @@ button:hover {
   font-size: 14px;
 }
 
-/* 测试结果文本框 */
-.result-textbox textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: monospace;
-  resize: none;
-  margin-bottom: 20px;
-}
 
 /* 表格和图片并列布局 */
 .result-container {
@@ -373,4 +363,20 @@ button:hover {
   margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* 自定义上传按钮样式 */
+.upload-button-custom {
+  background-color: #fd7e14; /* 绿色背景 */
+  color: white; /* 白色文字 */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button-custom:hover {
+  background-color: #e36209; /* 悬停时更深的绿色 */
 }

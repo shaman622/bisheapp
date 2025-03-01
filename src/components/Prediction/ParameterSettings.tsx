@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Imputation.css';
+import '../../styles/Imputation.css';
 
 const ParameterSettings: React.FC = () => {
     const [ratio, setRatio] = useState<string>('80,10,10'); // 比例参数
@@ -10,11 +10,6 @@ const ParameterSettings: React.FC = () => {
         seed: number;
         dropoutPercentage: number;
     } | null>(null);
-    const [options, setOptions] = useState<{
-        normalizeAdjMatrix: boolean;
-    }>({
-        normalizeAdjMatrix: false,
-    });
     const [processingResult, setProcessingResult] = useState<string>(''); // 处理结果
 
     // 处理比例输入
@@ -24,12 +19,6 @@ const ParameterSettings: React.FC = () => {
         if (/^\d+,\d+,\d+$/.test(value)) {
             setRatio(value);
         }
-    };
-
-    // 处理选项提交
-    const handleSubmitOptions = () => {
-        alert(`提交的选项：
-        邻接矩阵数据是否需要归一化处理: ${options.normalizeAdjMatrix ? '是' : '否'}`);
     };
 
     // 处理参数提交
@@ -43,62 +32,20 @@ const ParameterSettings: React.FC = () => {
 
     // 处理数据
     const handleProcessData = () => {
-        setProcessingResult('数据随机丢弃（训练用）\n……\n完成\n——————————————\n');
+        setProcessingResult('数据集划分\n……\n完成\n——————————————\n');
 
-        // 模拟邻接矩阵归一化
+        // 模拟数据处理完成
         setTimeout(() => {
             setProcessingResult(
-                (prev) => prev + '邻接矩阵归一化\n……\n完成\n——————————————\n'
+                (prev) =>
+                    prev +
+                    `数据处理全部完成。\n训练集数量：8  验证集数量：1  测试集数量：1\n`
             );
-
-            // 模拟数据集划分
-            setTimeout(() => {
-                setProcessingResult(
-                    (prev) => prev + '数据集划分\n……\n完成\n——————————————\n'
-                );
-
-                // 模拟数据处理完成
-                setTimeout(() => {
-                    setProcessingResult(
-                        (prev) =>
-                            prev +
-                            `数据处理全部完成。\n随机丢弃比例：${dropoutPercentage}%\n训练集数量：8  验证集数量：1  测试集数量：1\n`
-                    );
-                }, 1000); // 1 秒后显示最终结果
-            }, 1000); // 1 秒后显示数据集划分结果
-        }, 1000); // 1 秒后显示邻接矩阵归一化结果
+        }, 1000); // 1 秒后显示最终结果
     };
-
     return (
         <div className="section-card">
             <h2>预处理参数设置</h2>
-
-            {/* 选项提交部分 */}
-            <div className="options-submission">
-                <h3>选项提交</h3>
-                <div className="options-checkbox">
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={options.normalizeAdjMatrix}
-                            onChange={(e) =>
-                                setOptions({ ...options, normalizeAdjMatrix: e.target.checked })
-                            }
-                        />
-                        邻接矩阵数据是否需要归一化处理
-                    </label>
-                    <p className="option-description">
-                        不同数据来源的数据集预处理程度存在差别，请用户结合需求进行选择。
-                    </p>
-                </div>
-                <button
-                    type="button"
-                    onClick={handleSubmitOptions}
-                    className="submit-button"
-                >
-                    提交选项
-                </button>
-            </div>
 
             {/* 参数提交部分 */}
             <div className="parameter-submission">
