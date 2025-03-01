@@ -23,7 +23,7 @@ const ModelTesting: React.FC = () => {
 
                 {/* 测试结果显示 */}
                 <div className="result-textbox">
-                    <h4>预测结果：</h4>
+                    <h4>测试结果：</h4>
                     <textarea
                         readOnly
                         value={testResult}
