@@ -85,7 +85,7 @@ const Imputation: React.FC = () => {
             <div className="result-container">
                 {/* 图片 */}
                 <div className="result-image">
-                    <h4>不同迭代次数误差折线图</h4>
+                    <h4>预测结果折线图</h4>
                     <img
                         src="result.png" // 图片路径a
                         alt="误差折线图"
