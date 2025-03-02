@@ -73,7 +73,7 @@ const Imputation: React.FC = () => {
             </div>
                      {/* 测试结果显示 */}
                      <div className="result-textbox">
-                    <h4>预测结果：</h4>
+                    <h4>预测结果：（本模型可对时间序列之后的12个时间点的数据进行预测）</h4>
                     <textarea
                         readOnly
                         value={testResult}
@@ -83,30 +83,6 @@ const Imputation: React.FC = () => {
 
             {/* 表格和图片并列布局 */}
             <div className="result-container">
-                {/* 表格 */}
-                <div className="result-table">
-                    <h4>测试集预测结果</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>MAE</th>
-                                <th>MSE</th>
-                                <th>MRE</th>
-                                <th>early_stopping_epoch</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>0.49</td>
-                                <td>1.20</td>
-                                <td>0.93</td>
-                                <td>113</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-
                 {/* 图片 */}
                 <div className="result-image">
                     <h4>不同迭代次数误差折线图</h4>
@@ -115,6 +91,9 @@ const Imputation: React.FC = () => {
                         alt="误差折线图"
                         style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
                     />
+                </div>
+                {/* 表格 */}
+                <div className="result-table">
                 </div>
             </div>
         </div>
