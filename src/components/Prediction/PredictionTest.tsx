@@ -13,11 +13,10 @@ const Imputation: React.FC = () => {
             return;
         }
 
-        setTestResult('测试中...');
+        setTestResult('预测中...');
         // 模拟测试过程
         setTimeout(() => {
-            const resultText = `测试完成！
-            [validation_eval {"MAE": 0.5938144329896907, "MSE": 1.2003598484848485, "MRE": 0.9381443298969073,}, stop_epoch:113]`;
+            const resultText = `预测完成！\n[{38.000000‌ 38.723159 39.684275 40.299871 39.150432 40.756328 41.203194 41.892367 44.063247 42.431625 43.175829 46.000000}]`;
             setTestResult(resultText);
         }, 2000);
     };
@@ -87,7 +86,7 @@ const Imputation: React.FC = () => {
                 <div className="result-image">
                     <h4>预测结果折线图</h4>
                     <img
-                        src="result.png" // 图片路径a
+                        src="prediction.png" // 图片路径a
                         alt="误差折线图"
                         style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
                     />

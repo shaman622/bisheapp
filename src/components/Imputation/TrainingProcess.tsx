@@ -33,7 +33,7 @@ const TrainingProcess: React.FC = () => {
     // 开始训练
     const handleStartTraining = () => {
         setIsTraining(true);
-        setTrainingLog('——————————————————————————training start—————————————————————————————\n');
+        setTrainingLog('——————————————————————————Training start—————————————————————————————\n');
 
         // 模拟训练过程
         let index = 0;
@@ -50,7 +50,7 @@ const TrainingProcess: React.FC = () => {
             } else {
                 clearInterval(intervalRef.current!); // 清除 interval
                 setIsTraining(false);
-                setTrainingLog((prev) => prev + '训练完成！\n');
+                setTrainingLog((prev) => prev + '—————————————————————————— Training End ————————————————————————————\n');
             }
         }, 1000); // 每 1 秒添加一条日志
     };
@@ -62,7 +62,7 @@ const TrainingProcess: React.FC = () => {
             intervalRef.current = null; // 重置 interval ID
         }
         setIsTraining(false);
-        setTrainingLog((prev) => prev + '训练已停止。\n');
+        setTrainingLog((prev) => prev + '—————————————————————————— Training Stopped ————————————————————————————\n');
     };
 
     return (
@@ -70,7 +70,7 @@ const TrainingProcess: React.FC = () => {
             <h2>模型训练过程</h2>
             <div className="result-textbox">
                 <h4>训练日志：</h4>
-                <textarea readOnly value={trainingLog} rows={15} />
+                <textarea readOnly value={trainingLog} rows={15} className="training-log-textarea"/>
             </div>
             <div className="button-group">
                 <button

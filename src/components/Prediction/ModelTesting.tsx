@@ -61,7 +61,7 @@ const ModelTesting: React.FC = () => {
                 <div className="result-image">
                     <h4>不同迭代次数误差折线图</h4>
                     <img
-                        src="result.png" // 图片路径a
+                        src="training.png" // 图片路径a
                         alt="误差折线图"
                         style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
                     />

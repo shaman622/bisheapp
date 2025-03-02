@@ -384,3 +384,17 @@ button:hover {
 .upload-button-custom:hover {
   background-color: #e36209; /* 悬停时更深的绿色 */
 }
+
+/* 仅作用于当前组件的文本框 */
+.training-log-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+  resize: none; /* 禁止用户调整大小 */
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre; /* 确保文本内容不会被自动换行 */
+}
