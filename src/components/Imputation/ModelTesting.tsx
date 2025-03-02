@@ -8,8 +8,7 @@ const ModelTesting: React.FC = () => {
         setTestResult('测试中...');
         // 模拟测试过程
         setTimeout(() => {
-            const resultText = `测试完成！
-            [validation_eval {"MAE": 0.5938144329896907, "MSE": 1.2003598484848485, "MRE": 0.9381443298969073,}, stop_epoch:113]`;
+            const resultText = `测试完成\n[validation_eval {"MAE": 0.5938144329896907, "MSE": 1.2003598484848485, "MRE": 0.9381443298969073,}, stop_epoch:113]`;
             setTestResult(resultText);
         }, 2000);
     };

@@ -13,6 +13,8 @@ const Imputation: React.FC = () => {
     // 插补结果状态
     const [imputationResult, setImputationResult] = useState<string>('');
 
+    const [maxImputationLength, setMaxImputationLength] = useState<number>(10); // 最大插补长度
+
     // 处理不规则时间序列文件选择
     const handleTimeSeriesFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -134,6 +136,22 @@ const Imputation: React.FC = () => {
                         上传
                     </button>
                 </div>
+            </div>            
+            <div className="options-checkbox">
+                <label>
+                    <span>最大插补长度：</span>
+                    <input
+                        type="number"
+                        id="maxImputationLength"
+                        name="maxImputationLength"
+                        value={maxImputationLength}
+                        onChange={(e) => setMaxImputationLength(parseInt(e.target.value))}
+                        style={{ marginLeft: '10px', width: '60px' }}
+                    />
+                </label>
+                <p className="option-description">
+                    由用户决定是否对长序列连续缺失值进行插补。
+                </p>
             </div>
 
             {/* 第三部分：操作按钮 */}
