@@ -48,9 +48,9 @@ const ModelTesting: React.FC = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>0.49</td>
+                                <td>0.59</td>
                                 <td>1.20</td>
-                                <td>0.93</td>
+                                <td>0.94</td>
                                 <td>113</td>
                             </tr>
                         </tbody>

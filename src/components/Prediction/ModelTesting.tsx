@@ -9,7 +9,7 @@ const ModelTesting: React.FC = () => {
         // 模拟测试过程
         setTimeout(() => {
             const resultText = `测试完成！
-            [validation_eval {"MAE": 0.5938144329896907, "MSE": 1.2003598484848485, "MRE": 0.9381443298969073,}, stop_epoch:113]`;
+            [validation_eval {"MAE": 13.61364961507135, "RMSE": 19.35984801671848485, "MAPE": 9.13716098969073,}, stop_epoch:64]`;
             setTestResult(resultText);
         }, 2000);
     };
@@ -40,17 +40,17 @@ const ModelTesting: React.FC = () => {
                         <thead>
                             <tr>
                                 <th>MAE</th>
-                                <th>MSE</th>
-                                <th>MRE</th>
+                                <th>RMSE</th>
+                                <th>MAPE</th>
                                 <th>early_stopping_epoch</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>0.49</td>
-                                <td>1.20</td>
-                                <td>0.93</td>
-                                <td>113</td>
+                                <td>13.61</td>
+                                <td>19.36</td>
+                                <td>9.14</td>
+                                <td>64</td>
                             </tr>
                         </tbody>
                     </table>

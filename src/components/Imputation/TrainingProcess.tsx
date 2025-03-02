@@ -33,7 +33,7 @@ const TrainingProcess: React.FC = () => {
     // 开始训练
     const handleStartTraining = () => {
         setIsTraining(true);
-        setTrainingLog('训练开始...\n');
+        setTrainingLog('——————————————————————————training start—————————————————————————————\n');
 
         // 模拟训练过程
         let index = 0;

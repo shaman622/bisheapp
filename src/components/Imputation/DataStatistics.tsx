@@ -22,7 +22,7 @@ const DataStatistics: React.FC = () => {
     <div className="section-card">
       <h2>数据统计</h2>
       <p>
-        数据统计用于分析数据的分布特征，帮助选择合适的插补方法。
+        用于统计数据缺失自信息和邻接信息
       </p>
 
       {/* 数据统计按钮 */}
